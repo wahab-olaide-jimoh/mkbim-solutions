@@ -30,17 +30,5 @@
     "phone": "+234-806-212-5500",
     "address": "4, Albert Soteye Street, Idimu - Lagos, Nigeria"
   },
-    "testimonials": [
-  {
-    "name": "John Doe",
-    "company": "TechCorp",
-    "quote": "MKBIM SOLUTIONS delivered an outstanding IT solution on time."
-  },
-  {
-    "name": "Jane Smith",
-    "company": "BuildMaster",
-    "quote": "Excellent contracting services for our project."
-  }
-],
-"footer": "© 2025 MKBIM SOLUTIONS. All rights reserved."
+  "footer": "© 2025 MKBIM SOLUTIONS. All rights reserved."
 }

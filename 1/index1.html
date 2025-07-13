@@ -1,0 +1,99 @@
+<!DOCTYPE html> <!-- Force rebuild -->
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MKBIM SOLUTIONS</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 font-sans">
+  <!-- Header -->
+  <header class="bg-blue-900 text-white py-4" id="header"></header>
+
+  <!-- Hero Section -->
+  <section id="home" class="bg-blue-900 text-white py-20 text-center"></section>
+
+  <!-- Services Section -->
+  <section id="services" class="py-16"></section>
+
+  <!-- About Section -->
+  <section id="about" class="bg-gray-200 py-16"></section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="py-16"></section>
+
+  <!-- Footer -->
+  <footer id="footer" class="bg-blue-900 text-white py-4 text-center"></footer>
+
+  <script>
+    // Fetch data from data.json
+    fetch('data.json')
+      .then(response => response.json())
+      .then(data => {
+        // Header
+        document.getElementById('header').innerHTML = `
+          <div class="container mx-auto px-4 flex justify-between items-center">
+            <div class="flex items-center">
+              <img src="${data.logo}" alt="${data.companyName} Logo" class="h-12 mr-4">
+              <h1 class="text-2xl font-bold">${data.companyName}</h1>
+            </div>
+            <nav>
+              <ul class="flex space-x-4">
+                <li><a href="#home" class="hover:text-orange-500">Home</a></li>
+                <li><a href="#services" class="hover:text-orange-500">Services</a></li>
+                <li><a href="#about" class="hover:text-orange-500">About</a></li>
+                <li><a href="#contact" class="hover:text-orange-500">Contact</a></li>
+              </ul>
+            </nav>
+          </div>
+        `;
+
+        // Hero Section
+        document.getElementById('home').innerHTML = `
+          <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold mb-4">${data.hero.title}</h2>
+            <p class="text-lg mb-6">${data.hero.description}</p>
+            <a href="#contact" class="bg-orange-500 text-white px-6 py-3 rounded hover:bg-orange-600">${data.hero.buttonText}</a>
+          </div>
+        `;
+
+        // Services Section
+        document.getElementById('services').innerHTML = `
+          <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-8">Our Services</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+              ${data.services.map(service => `
+                <div class="bg-white p-6 rounded shadow">
+                  <h3 class="text-xl font-bold mb-2">${service.title}</h3>
+                  <p>${service.description}</p>
+                </div>
+              `).join('')}
+            </div>
+          </div>
+        `;
+
+        // About Section
+        document.getElementById('about').innerHTML = `
+          <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-8">${data.about.title}</h2>
+            <p class="text-lg text-center">${data.about.description}</p>
+          </div>
+        `;
+
+        // Contact Section
+        document.getElementById('contact').innerHTML = `
+          <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl font-bold mb-8">${data.contact.title}</h2>
+            <p class="text-lg mb-4">Email: <a href="mailto:${data.contact.email}">${data.contact.email}</a></p>
+            <p class="text-lg mb-4">Phone: ${data.contact.phone}</p>
+            <p class="text-lg mb-4">Address: ${data.contact.address}</p>
+          </div>
+        `;
+
+        // Footer
+        document.getElementById('footer').innerHTML = `<p>${data.footer}</p>`;
+      })
+      .catch(error => console.error('Error loading data:', error));
+  </script>
+</body>
+</html>
