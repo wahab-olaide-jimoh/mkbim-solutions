@@ -1,115 +1,289 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>MKBIM SOLUTIONS</title>
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
 </head>
-<body>
-  <div id="header"></div>
-  <section id="home" class="bg-blue-900 text-white py-16"></section>
-  <section id="services" class="py-16"></section>
-  <section id="about" class="py-16"></section>
-  <section id="contact" class="py-16"></section>
-  <section id="testimonials" class="py-16 bg-gray-200"></section>
-  <div id="footer" class="py-4 bg-gray-800 text-white text-center"></div>
+<body class="bg-white text-gray-900 font-sans">
 
-  <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      function updateElement(id, html) {
-        const element = document.getElementById(id);
-        if (!element) {
-          console.error(`Element with ID '${id}' not found in the DOM`);
-          return;
-        }
-        element.innerHTML = html;
-      }
+  <!-- Header with Navigation Menu -->
+<header class="bg-gray-100 border-b">
+  <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+    <!-- Logo and Tagline -->
+    <div class="flex items-center space-x-3">
+      <img src="logo.png" alt="MKBIM Logo" class="h-10" />
+      <div>
+        <h1 class="text-2xl font-bold text-blue-900">MKBIM SOLUTIONS</h1>
+        <p class="text-sm text-gray-600">Your Gateway to Reliable Solutions</p>
+      </div>
+    </div>
+    
+    <!-- Navigation Menu -->
+    <nav>
+      <ul class="flex space-x-6 text-sm font-semibold text-blue-900">
+        <li><a href="#home" class="hover:text-blue-600">Home</a></li>
+        <li><a href="#about" class="hover:text-blue-600">About</a></li>
+        <li><a href="#services" class="hover:text-blue-600">Services</a></li>
+        <li><a href="#contact" class="hover:text-blue-600">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
 
-      fetch('data.json')
-        .then(response => {
-          if (!response.ok) {
-            throw new Error(`HTTP error! Status: ${response.status} - ${response.statusText}`);
-          }
-          return response.json();
-        })
-        .then(data => {
-          updateElement('header', `
-            <div class="container mx-auto px-4 flex justify-between items-center">
-              <div class="flex items-center">
-                <img src="${data.logo}" alt="${data.companyName} Logo" class="h-20 mr-6">
-                <h1 class="text-2xl font-bold">${data.companyName}</h1>
-              </div>
-              <nav>
-                <ul class="flex space-x-4">
-                  <li><a href="#home" class="hover:text-orange-500">Home</a></li>
-                  <li><a href="#services" class="hover:text-orange-500">Services</a></li>
-                  <li><a href="#about" class="hover:text-orange-500">About</a></li>
-                  <li><a href="#contact" class="hover:text-orange-500">Contact</a></li>
-                </ul>
-              </nav>
-            </div>
-          `);
-          updateElement('home', `
-            <div class="container mx-auto px-4">
-              <h2 class="text-4xl font-bold mb-4">${data.hero.title}</h2>
-              <p class="text-lg mb-6">${data.hero.description}</p>
-              <a href="#contact" class="bg-orange-500 text-white px-6 py-3 rounded hover:bg-orange-600">${data.hero.buttonText}</a>
-            </div>
-          `);
-          updateElement('services', `
-            <div class="container mx-auto px-4">
-              <h2 class="text-3xl font-bold text-center mb-8">Our Services</h2>
-              <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                ${data.services.map(service => `
-                  <div class="bg-white p-6 rounded shadow">
-                    <h3 class="text-xl font-bold mb-2">${service.title}</h3>
-                    <p>${service.description}</p>
-                  </div>
-                `).join('')}
-              </div>
-            </div>
-          `);
-          updateElement('about', `
-            <div class="container mx-auto px-4">
-              <h2 class="text-3xl font-bold text-center mb-8">${data.about.title}</h2>
-              <p class="text-lg text-center">${data.about.description}</p>
-            </div>
-          `);
-          updateElement('contact', `
-            <div class="container mx-auto px-4 text-center">
-              <h2 class="text-3xl font-bold mb-8">Contact Us</h2>
-              <form action="https://formspree.io/f/mgvzwkel" method="POST" class="max-w-md mx-auto">
-                <input type="text" name="name" placeholder="Your Name" class="w-full p-2 mb-4 border rounded" required>
-                <input type="email" name="email" placeholder="Your Email" class="w-full p-2 mb-4 border rounded" required>
-                <textarea name="message" placeholder="Your Message" class="w-full p-2 mb-4 border rounded" rows="4" required></textarea>
-                <button type="submit" class="bg-orange-500 text-white px-6 py-2 rounded hover:bg-orange-600">Send Message</button>
-              </form>
-              <p class="text-lg mt-4">Email: <a href="mailto:${data.contact.email}">${data.contact.email}</a></p>
-              <p class="text-lg">Phone: ${data.contact.phone}</p>
-              <p class="text-lg">Address: ${data.contact.address}</p>
-            </div>
-          `);
-          updateElement('testimonials', `
-            <div class="container mx-auto px-4">
-              <h2 class="text-3xl font-bold text-center mb-8">What Our Clients Say</h2>
-              <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                ${data.testimonials.map(testimonial => `
-                  <div class="bg-white p-6 rounded shadow">
-                    <p class="italic mb-2">"${testimonial.quote}"</p>
-                    <p class="font-bold">${testimonial.name}, ${testimonial.company}</p>
-                  </div>
-                `).join('')}
-              </div>
-            </div>
-          `);
-          updateElement('footer', `<p class="text-center">${data.footer}</p>`);
-        })
-        .catch(error => {
-          console.error('Error loading data:', error.message);
-          updateElement('home', `<p class="text-red-500 text-center">Error loading content: ${error.message}. Check console for details or ensure data.json exists.</p>`);
-        });
-    });
-  </script>
+
+
+ <!-- Hero Section -->
+ <section class="bg-blue-900 text-white text-center py-4">
+  <div class="container mx-auto max-w-xl px-4">
+    <h2 class="text-3xl font-bold mb-2">Welcome to MKBIM SOLUTIONS</h2>
+    <p class="text-base mb-4">
+      Your trusted partner for IT Services, Software Solutions, IT Product Sales, and General Contracting. Any device, any problem, anytime, anywhere.
+    </p>
+    <div class="flex flex-col md:flex-row justify-center items-center space-y-1 md:space-x-3 md:space-y-0 mb-3">
+      <a href="#contact" class="bg-orange-500 hover:bg-orange-600 text-white px-5 py-2 rounded font-semibold text-base">Start Support Session</a>
+      <a href="#contact" class="bg-green-500 hover:bg-green-600 text-white px-5 py-2 rounded font-semibold text-base">Get Started</a>
+    </div>
+    <p class="text-sm">📞 Speak with us: <a href="tel:+2348062125500" class="underline text-sm">+234-806-212-5500</a></p>
+    <p class="mt-1 text-yellow-300 text-sm">✔️ 7 Day Money Back Guarantee</p>
+  </div>
+</section>
+
+  <!-- Services -->
+   <section id="services" class="py-20 bg-gray-50">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl font-bold text-center mb-10 text-blue-900">Our Services</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition">
+          <img src="services.jpeg" alt="IT Services" class="w-full h-40 object-cover rounded mb-4" />
+          <h3 class="text-xl font-semibold text-blue-800 mb-2">IT Services & Software</h3>
+          <p class="text-gray-700">Custom software development, cybersecurity, and strategic IT consulting.</p>
+        </div>
+        <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition">
+          <img src="gad.jpeg" alt="Product Sales" class="w-full h-40 object-cover rounded mb-4" />
+          <h3 class="text-xl font-semibold text-blue-800 mb-2">IT Product Sales</h3>
+          <p class="text-gray-700">Supply of computers, servers, networking hardware, and software licenses.</p>
+        </div>
+        <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition">
+          <img src="IT.jpeg" alt="General Contracting" class="w-full h-40 object-cover rounded mb-4" />
+          <h3 class="text-xl font-semibold text-blue-800 mb-2">General Contracting</h3>
+          <p class="text-gray-700">Infrastructure management, procurement & top-tier quality control solutions.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="py-20 bg-gray-50">
+    <div class="container mx-auto px-4 text-center">
+      <h2 class="text-3xl font-bold text-blue-900 mb-4">About MKBIM</h2>
+      <p class="text-lg text-gray-700">
+        MKBIM SOLUTIONS (Registration No: 8234995) and TAX IDENTIFICATION NUMBER: 32774763-0001, is a Nigerian company dedicated to delivering innovative IT and contracting solutions. With a Sterling Bank business account (0001123489), we are committed to reliability and client satisfaction.
+      </p>
+    </div>
+  </section>
+
+  <!-- Tech Issue Categories -->
+  <section class="py-20 bg-white">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl font-bold text-center text-blue-900 mb-10">Any Technology Issue Solved!</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 text-center">
+        <div class="bg-gray-50 p-6 rounded shadow">
+          <div class="text-4xl mb-2">🛡️</div>
+          <h4 class="font-bold mb-1">Virus & Malware Removal</h4>
+          <p class="text-sm text-gray-600">Remove threats and secure your device.</p>
+        </div>
+        <div class="bg-gray-50 p-6 rounded shadow">
+          <div class="text-4xl mb-2">🗣️</div>
+          <h4 class="font-bold mb-1">Smart Device Setup</h4>
+          <p class="text-sm text-gray-600">Amazon Echo, Google Assistant, Alexa, etc.</p>
+        </div>
+        <div class="bg-gray-50 p-6 rounded shadow">
+          <div class="text-4xl mb-2">🎥</div>
+          <h4 class="font-bold mb-1">Video Conferencing Help</h4>
+          <p class="text-sm text-gray-600">Zoom, Teams, Meet — setup and troubleshooting.</p>
+        </div>
+        <div class="bg-gray-50 p-6 rounded shadow">
+          <div class="text-4xl mb-2">🖨️</div>
+          <h4 class="font-bold mb-1">Printer Setup / Repair</h4>
+          <p class="text-sm text-gray-600">Install or fix issues with printing devices.</p>
+        </div>
+        <div class="bg-gray-50 p-6 rounded shadow">
+          <div class="text-4xl mb-2">📶</div>
+          <h4 class="font-bold mb-1">WiFi Setup / Issues</h4>
+          <p class="text-sm text-gray-600">Connectivity, router, modem help.</p>
+        </div>
+        <div class="bg-gray-50 p-6 rounded shadow">
+          <div class="text-4xl mb-2">💻</div>
+          <h4 class="font-bold mb-1">Device Repairs</h4>
+          <p class="text-sm text-gray-600">Laptop, desktop, mobile phone diagnostics.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Common Issue List -->
+  <section class="py-16 bg-gray-100">
+    <div class="container mx-auto px-4">
+      <h3 class="text-2xl font-bold text-center mb-6 text-blue-900">We Help With:</h3>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-sm text-gray-700">
+        <ul class="list-disc ml-5">
+          <li>Slow Computer Speed</li>
+          <li>Crashes and Freezes</li>
+          <li>Errors and Pop-Ups</li>
+          <li>App Installation and Removal</li>
+          <li>Phone Freezes / Sync Issues</li>
+        </ul>
+        <ul class="list-disc ml-5">
+          <li>Virus, Malware, Spyware</li>
+          <li>iPhone/Android Optimization</li>
+          <li>Operating System Updates</li>
+          <li>Software & Driver Upgrades</li>
+          <li>Hard Drive Cleanup & Optimization</li>
+        </ul>
+        <ul class="list-disc ml-5">
+          <li>Email Setup & Troubleshooting</li>
+          <li>Backup & Data Recovery</li>
+          <li>Password Recovery & Reset</li>
+          <li>Browser Troubleshooting</li>
+          <li>Network Configuration</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  
+  <!-- YouTube Video Showcase -->
+<section class="py-20 bg-white">
+  <div class="container mx-auto px-4">
+    <h2 class="text-3xl font-bold text-center text-blue-900 mb-10">Watch Our Tech Support in Action</h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+
+      <!-- Video 1 -->
+      <div class="flex flex-col items-center bg-gray-50 rounded-lg shadow-md p-4">
+        <div class="aspect-w-16 aspect-h-9 w-full mb-4">
+          <iframe class="w-full h-full rounded" src="https://www.youtube.com/embed/YOUR_VIDEO_ID_1" title="Tech Support Demo 1" frameborder="0" allowfullscreen></iframe>
+        </div>
+        <p class="text-sm text-gray-700 italic text-center">
+          “They cleaned it up and fixed it, and it runs just like brand-new.”
+        </p>
+        <p class="text-xs text-blue-700 font-semibold mt-1">— Steve</p>
+      </div>
+
+      <!-- Video 2 -->
+      <div class="flex flex-col items-center bg-gray-50 rounded-lg shadow-md p-4">
+        <div class="aspect-w-16 aspect-h-9 w-full mb-4">
+          <iframe class="w-full h-full rounded" src="https://www.youtube.com/embed/YOUR_VIDEO_ID_2" title="Tech Support Demo 2" frameborder="0" allowfullscreen></iframe>
+        </div>
+        <p class="text-sm text-gray-700 italic text-center">
+          “It saved me a lot of time; it saved me from buying a new computer.”
+        </p>
+        <p class="text-xs text-blue-700 font-semibold mt-1">— Ron</p>
+      </div>
+
+      <!-- Video 3 -->
+      <div class="flex flex-col items-center bg-gray-50 rounded-lg shadow-md p-4">
+        <div class="aspect-w-16 aspect-h-9 w-full mb-4">
+          <iframe class="w-full h-full rounded" src="https://www.youtube.com/embed/YOUR_VIDEO_ID_3" title="Tech Support Demo 3" frameborder="0" allowfullscreen></iframe>
+        </div>
+        <p class="text-sm text-gray-700 italic text-center">
+          “I really feel that I've gotten my money's worth.”
+        </p>
+        <p class="text-xs text-blue-700 font-semibold mt-1">— Nancy</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- Customer Reviews -->
+<section class="py-20 bg-gray-50">
+  <div class="container mx-auto px-4">
+    <h2 class="text-3xl font-bold text-center text-blue-900 mb-10">What Our Customers Say</h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+
+      <!-- Review 1 -->
+      <div class="bg-white p-6 rounded-lg shadow-md">
+        <p class="text-sm text-gray-700 italic mb-4">
+          "MKBIM SOLUTIONS saved my business when my systems crashed. Their support team was quick, professional, and incredibly knowledgeable."
+        </p>
+        <div class="text-yellow-400 text-lg mb-2">★★★★★</div>
+        <p class="font-semibold text-blue-800">— Fatima O., Lagos</p>
+      </div>
+
+      <!-- Review 2 -->
+      <div class="bg-white p-6 rounded-lg shadow-md">
+        <p class="text-sm text-gray-700 italic mb-4">
+          "Excellent service! They set up our network, optimized our devices, and even helped with data recovery. I highly recommend MKBIM!"
+        </p>
+        <div class="text-yellow-400 text-lg mb-2">★★★★★</div>
+        <p class="font-semibold text-blue-800">— John A., Abuja</p>
+      </div>
+
+      <!-- Review 3 -->
+      <div class="bg-white p-6 rounded-lg shadow-md">
+        <p class="text-sm text-gray-700 italic mb-4">
+          "The support team was available 24/7 and solved my WiFi issues in no time. Truly reliable and professional. Great job!"
+        </p>
+        <div class="text-yellow-400 text-lg mb-2">★★★★★</div>
+        <p class="font-semibold text-blue-800">— Chika E., Port Harcourt</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+  <!-- Contact Section -->
+<section id="contact" class="py-20 bg-blue-50">
+  <div class="container mx-auto px-4">
+    <h2 class="text-3xl font-bold text-center mb-10 text-blue-900">Reach Out Now</h2>
+    <div class="max-w-xl mx-auto bg-white p-6 rounded shadow-md">
+      <form action="mailto:info@mkbim.com" method="POST" enctype="text/plain" class="space-y-4">
+        <div>
+          <label for="name" class="block text-sm font-semibold mb-1">Full Name</label>
+          <input type="text" id="name" name="name" class="w-full border border-gray-300 rounded px-3 py-2" required />
+        </div>
+        <div>
+          <label for="email" class="block text-sm font-semibold mb-1">Email Address</label>
+          <input type="email" id="email" name="email" class="w-full border border-gray-300 rounded px-3 py-2" required />
+        </div>
+        <div>
+          <label for="issue" class="block text-sm font-semibold mb-1">Your Issue</label>
+          <textarea id="issue" name="issue" rows="4" class="w-full border border-gray-300 rounded px-3 py-2" placeholder="Briefly describe your tech issue..."></textarea>
+        </div>
+        <button type="submit" class="w-full bg-blue-800 text-white px-4 py-2 rounded font-semibold hover:bg-blue-900 transition">Submit</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- Business Contact Details -->
+<section class="bg-white py-8">
+  <div class="container mx-auto max-w-md px-4 text-center">
+    <h3 class="text-xl font-bold text-blue-900 mb-4">Business Contact</h3>
+    <p class="text-base text-gray-700 mb-2">
+      📧 Email: <a href="mailto:mkbim-solutions.com" class="text-blue-600 underline">mkbim-solutions.com</a>
+    </p>
+    <p class="text-base text-gray-700 mb-2">
+      📞 Phone: <a href="tel:+2348062125500" class="text-blue-600 underline">+234-806-212-5500</a>
+    </p>
+    <p class="text-base text-gray-700">
+      📍 Address: 4, Albert Soteye Street, Idimu - Lagos, Nigeria
+    </p>
+  </div>
+</section>
+
+  <!-- Footer -->
+<footer class="bg-gray-100 py-6 border-t">
+  <div class="container mx-auto px-4 text-center text-sm text-gray-700">
+    <p>&copy; 2025 MKBIM SOLUTIONS. All Rights Reserved.</p>
+    <p>Powered by Reliable Tech • Built with ❤️ and TailwindCSS</p>
+  </div>
+</footer>
+
+
 </body>
 </html>
