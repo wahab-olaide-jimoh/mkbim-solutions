@@ -1,46 +1,288 @@
 {
-  "logo": "logo.png",
-  "companyName": "MKBIM SOLUTIONS",
-  "hero": {
-    "title": "Welcome to MKBIM SOLUTIONS",
-    "description": "Your trusted partner for IT Services, Software Solutions, IT Product Sales, and General Contracting.",
-    "buttonText": "Get in Touch"
+  "company": {
+    "name": "MKBIM SOLUTIONS",
+    "tagline": "Technology That Keeps Your Business Moving",
+    "description": "Practical IT support, infrastructure, software, security and technology procurement for businesses in Lagos and across Nigeria.",
+    "phone": "+234-806-212-5500",
+    "email": "support@mkbim-solutions.com",
+    "address": "4, Albert Soteye Street, Idimu - Lagos, Nigeria",
+    "whatsapp": "+2348062125500"
   },
-  "services": [
+  "hero": {
+    "eyebrow": "IT SERVICES • INFRASTRUCTURE • SOFTWARE • SECURITY",
+    "title": "Technology That Keeps Your Business Moving",
+    "description": "Reliable IT services, infrastructure, software and security solutions designed around your business needs.",
+    "primaryButton": "Request IT Support",
+    "secondaryButton": "Explore Services",
+    "highlight": "Business Moving"
+  },
+  "trust": [
     {
-      "title": "IT Services & Software",
-      "description": "Custom software development, IT consulting, and cybersecurity solutions."
+      "icon": "support",
+      "title": "Responsive Support",
+      "text": "Technical assistance when you need it."
     },
     {
-      "title": "IT Product Sales",
-      "description": "Supply of computers, servers, networking equipment, and software licenses."
+      "icon": "security",
+      "title": "Security Mindset",
+      "text": "Technology solutions designed with protection in mind."
     },
     {
-      "title": "General Contracting",
-      "description": "Project management, procurement, and quality assurance for infrastructure projects."
+      "icon": "tools",
+      "title": "Technical Expertise",
+      "text": "Practical support across business technology environments."
+    },
+    {
+      "icon": "customer",
+      "title": "Customer Focus",
+      "text": "Solutions aligned with your operational requirements."
     }
   ],
-  "about": {
-    "title": "About Us",
-    "description": "MKBIM SOLUTIONS (Registration No: 8234995) and TAX IDENTIFICATION NUMBER: 32774763-0001, is a Nigerian company dedicated to delivering innovative IT and contracting solutions. With a Sterling Bank business account (0001123489), we are committed to reliability and client satisfaction."
-  },
-  "contact": {
-    "title": "Contact Us",
-    "email": "info@mkbim.com",
-    "phone": "+234-806-212-5500",
-    "address": "4, Albert Soteye Street, Idimu - Lagos, Nigeria"
-  },
-    "testimonials": [
-  {
-    "name": "John Doe",
-    "company": "TechCorp",
-    "quote": "MKBIM SOLUTIONS delivered an outstanding IT solution on time."
-  },
-  {
-    "name": "Jane Smith",
-    "company": "BuildMaster",
-    "quote": "Excellent contracting services for our project."
-  }
-],
-"footer": "© 2025 MKBIM SOLUTIONS. All rights reserved."
+  "services": [
+    {
+      "icon": "support",
+      "title": "IT Support & Managed Services",
+      "description": "Reliable day-to-day technical support that keeps users, devices and business systems productive.",
+      "focus": "User support • Maintenance • Troubleshooting",
+      "capabilities": [
+        "Remote & onsite technical support",
+        "Preventive maintenance & health checks",
+        "User, desktop and software troubleshooting"
+      ]
+    },
+    {
+      "icon": "network",
+      "title": "Networking & Infrastructure",
+      "description": "Business network solutions designed for dependable connectivity, performance and easier administration.",
+      "focus": "LAN/Wi-Fi • Connectivity • Infrastructure",
+      "capabilities": [
+        "LAN, Wi-Fi and network deployment",
+        "Switches, routers and connectivity setup",
+        "Network troubleshooting and optimization"
+      ]
+    },
+    {
+      "icon": "security",
+      "title": "Cybersecurity",
+      "description": "Practical security measures that help protect endpoints, systems, access and business information.",
+      "focus": "Endpoints • Access • Protection",
+      "capabilities": [
+        "Endpoint security and protection",
+        "Access control and security hardening",
+        "Security checks and risk-focused support"
+      ]
+    },
+    {
+      "icon": "server",
+      "title": "Servers & Systems",
+      "description": "Server and systems administration for environments that depend on reliable business technology.",
+      "focus": "Servers • Administration • Availability",
+      "capabilities": [
+        "Windows and Linux server support",
+        "Server deployment and administration",
+        "System maintenance and issue resolution"
+      ]
+    },
+    {
+      "icon": "cloud",
+      "title": "Cloud & Business Productivity",
+      "description": "Cloud, email, backup and collaboration technologies that support modern business workflows.",
+      "focus": "Cloud • Email • Backup • Productivity",
+      "capabilities": [
+        "Business email and cloud services",
+        "Backup and recovery planning",
+        "Productivity and collaboration support"
+      ]
+    },
+    {
+      "icon": "software",
+      "title": "Software & Business Solutions",
+      "description": "Business applications, databases and technology solutions aligned with operational requirements.",
+      "focus": "Software • Databases • Automation",
+      "capabilities": [
+        "Business software and ERP-related support",
+        "Database and application support",
+        "Workflow and technology automation"
+      ]
+    },
+    {
+      "icon": "access",
+      "title": "Security & Attendance Systems",
+      "description": "Technology solutions for workplace security, access management and staff attendance monitoring.",
+      "focus": "CCTV • Access • Biometrics",
+      "capabilities": [
+        "Biometric attendance systems",
+        "CCTV and security technology",
+        "Access control and related systems"
+      ]
+    },
+    {
+      "icon": "hardware",
+      "title": "IT Hardware & Procurement",
+      "description": "Business technology equipment and procurement support for reliable, fit-for-purpose deployments.",
+      "focus": "Computers • Servers • Networking",
+      "capabilities": [
+        "Computers, servers and peripherals",
+        "Networking and infrastructure equipment",
+        "Software and technology procurement"
+      ]
+    }
+  ],
+  "managedServices": [
+    {
+      "icon": "support",
+      "title": "Remote IT Support",
+      "text": "Remote assistance for appropriate user, software and system issues, helping reduce unnecessary onsite visits."
+    },
+    {
+      "icon": "tools",
+      "title": "Preventive IT Maintenance",
+      "text": "Planned maintenance and health checks for devices, systems and infrastructure to identify issues early."
+    },
+    {
+      "icon": "monitor",
+      "title": "Infrastructure Monitoring",
+      "text": "Visibility into important systems and infrastructure so potential issues can be identified and addressed promptly."
+    },
+    {
+      "icon": "backup",
+      "title": "Backup & Recovery",
+      "text": "Backup and recovery support focused on protecting important business data and improving continuity planning."
+    }
+  ],
+  "solutions": [
+    {
+      "icon": "software",
+      "title": "Business Software & ERP",
+      "text": "Business applications, ERP-related services, databases and system integration."
+    },
+    {
+      "icon": "network",
+      "title": "Infrastructure Solutions",
+      "text": "Servers, networks, virtualization and business technology infrastructure."
+    },
+    {
+      "icon": "automation",
+      "title": "IT Automation",
+      "text": "Practical automation opportunities that reduce repetitive technology tasks and improve consistency."
+    },
+    {
+      "icon": "hardware",
+      "title": "Technology Procurement",
+      "text": "Sourcing and supply of business IT equipment and related technology products."
+    }
+  ],
+  "industries": [
+    {
+      "icon": "corporate",
+      "title": "Corporate & SMEs",
+      "text": "IT support, infrastructure and business technology for office-based operations."
+    },
+    {
+      "icon": "manufacturing",
+      "title": "Manufacturing",
+      "text": "Infrastructure, systems and technology support for operational environments."
+    },
+    {
+      "icon": "education",
+      "title": "Education",
+      "text": "Connectivity, user support, systems and technology for learning environments."
+    },
+    {
+      "icon": "retail",
+      "title": "Retail",
+      "text": "Technology support for connectivity, devices, business systems and operations."
+    },
+    {
+      "icon": "healthcare",
+      "title": "Healthcare",
+      "text": "Technology support for systems, connectivity and operational IT requirements."
+    },
+    {
+      "icon": "residential",
+      "title": "Residential",
+      "text": "Technology, connectivity, security and support solutions for selected residential needs."
+    }
+  ],
+  "why": [
+    {
+      "title": "Practical Solutions",
+      "text": "Technology recommendations focused on the actual operational requirement."
+    },
+    {
+      "title": "Business Focus",
+      "text": "IT solutions presented in terms of reliability, continuity and usability."
+    },
+    {
+      "title": "Flexible Support",
+      "text": "A service model that can accommodate individual support needs and broader projects."
+    },
+    {
+      "title": "End-to-End Thinking",
+      "text": "From equipment and infrastructure through software, security and support."
+    }
+  ],
+  "technologies": [
+    "Microsoft",
+    "Windows Server",
+    "Linux",
+    "SAP",
+    "SQL Server",
+    "Hyper-V",
+    "ZKTeco",
+    "Sophos"
+  ],
+  "projects": [
+    {
+      "category": "Business Systems",
+      "title": "SAP Business One & SAP HANA Environment",
+      "text": "Implementation and migration support spanning SAP Business One server components, SAP HANA database infrastructure, Windows client services, data preparation and end-user enablement.",
+      "status": "ERP • SAP HANA • Systems"
+    },
+    {
+      "category": "Infrastructure",
+      "title": "Server, Directory & Virtualization Infrastructure",
+      "text": "Administration and troubleshooting across Windows Server, Active Directory, Hyper-V and Linux-based server environments, including networking, certificates and storage.",
+      "status": "Windows • Linux • Hyper-V • AD"
+    },
+    {
+      "category": "Workplace Technology",
+      "title": "Biometric Attendance & Access Systems",
+      "text": "Deployment and support for ZKTeco attendance environments, including MB460 terminal configuration, ZKTimeNet administration and attendance workflow support.",
+      "status": "ZKTeco • Biometrics • Attendance"
+    },
+    {
+      "category": "Business Applications",
+      "title": "Business Systems & Data Migration",
+      "text": "Support across Tally.ERP9, Tally Server, data migration and SQL/Access-based operational data workflows for business systems.",
+      "status": "Tally • SQL • Data Migration"
+    }
+  ],
+  "testimonials": [],
+  "faqs": [
+    {
+      "q": "Do you provide onsite IT support?",
+      "a": "Yes. Onsite support can be arranged where physical access, installation, maintenance or infrastructure work is required, subject to the agreed service arrangement."
+    },
+    {
+      "q": "Can MKBIM support businesses remotely?",
+      "a": "Yes. Remote support can be used for appropriate user, software and system issues, while onsite support can be arranged where physical access is required."
+    },
+    {
+      "q": "Do you supply computers and networking equipment?",
+      "a": "Yes. IT hardware and procurement are part of the MKBIM service offering, including computers, servers, peripherals and networking equipment."
+    },
+    {
+      "q": "Do you provide server and network services?",
+      "a": "Yes. MKBIM supports server and network environments, including Windows and Linux systems, LAN/Wi-Fi, switches, routers and related infrastructure."
+    },
+    {
+      "q": "Can you support SAP Business One and other business systems?",
+      "a": "MKBIM can support business technology environments involving ERP-related systems, databases, infrastructure and user enablement. Requirements are assessed before engagement."
+    },
+    {
+      "q": "How do I request IT support or a quotation?",
+      "a": "Use Request a Quote or Request IT Support, or contact MKBIM through WhatsApp, email or phone. Include a short description of the requirement so the appropriate next step can be discussed."
+    }
+  ]
 }
